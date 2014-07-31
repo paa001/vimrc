@@ -45,17 +45,32 @@ Bundle 'oguzbilgic/sexy-railscasts-theme'
 call vundle#end()            " required
 filetype plugin indent on    " required
 "----------------------VUNDLE<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-"
-"----------------------HOTKEYS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-map <F12> :NERDTreeToggle ~/RubymineProjects/lms/<cr>
-vmap <F12> <esc>:NERDTreeToggle ~/RubymineProjects/lms/<cr>
-imap <F12> <esc>:NERDTreeToggle ~/RubymineProjects/lms/<cr>
 
-map <C-Left> <C-w>h
-map <C-Down> <C-w>j
-map <C-Up> <C-w>k
-map <C-Right> <C-w>l
-	
+"----------------------HOTKEYS>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+map <F12> :NERDTreeToggle <cr>
+vmap <F12> <esc>:NERDTreeToggle <cr>
+imap <F12> <esc>:NERDTreeToggle <cr>
+
+map <C-S-Left> <C-w>h
+map <C-S-Down> <C-w>j
+map <C-S-Up> <C-w>k
+map <C-S-Right> <C-w>l
+
+"Control BackSpace
+map <C-BS> db
+"Control Del
+map <C-Del> dw
+"Shift Del
+map <S-Del> dd
+"Enter
+map <Enter> o
+map <S-SPACE> o<esc>
+map <SPACE> i<SPACE><esc>
+map <C-s> <esc>:w<cr>
+map <C-z> u
+map <C-q> <esc>:q<cr>
+map <C-f> /
+map <C-S-t> :tabnew <cr>
 " NERDCommenter
 map cc <leader>ci
 "----------------------HOTKEYS<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -65,7 +80,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=2
 set expandtab
-set autoindent 
+set autoindent
 
 set clipboard=unnamed
 " не переносить строки
@@ -76,3 +91,18 @@ set number
 set guioptions-=r  "remove right-hand scroll bar
 set guioptions-=L  "remove left-hand scroll bar
 
+"if has("gui_gnome")
+"  set term=gnome-256color
+  "set guifont=Monaco\ 12
+"endif
+
+" Ограничивающая линия в 120 символов
+set colorcolumn=120
+"  подсветку для поиска
+set hlsearch
+"инкрементальный поиск
+set incsearch
+
+" пробелы
+set listchars=tab:▸\ ,eol:¬
+autocmd BufRead,BufNewFile *.jbuilder set filetype=Ruby
